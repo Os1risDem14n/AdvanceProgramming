@@ -10,30 +10,34 @@ namespace BankAccount
 	{
 		public class BankAccount 
 		{
-			public int id;
-			public decimal balance;
+			// Private modifier
+			private int id;
+			private decimal balance;
+			// Public modifier
+			public int Id;
+			public decimal Balance;
 						
-			public void Deposit(int zzz)
+			public void Deposit(int depositAmount)
 			{
-				balance=balance+zzz;
+				Balance = Balance + depositAmount;
 			}
 
-			public void WithDraw(int zzz)
+			public void WithDraw(int withdrawAmount)
 			{
-				balance=balance-zzz;
+				Balance = Balance - withdrawAmount;
 			}
 
 		}
 		static void Main(string[] args)
 		{
 			BankAccount acc = new BankAccount();
-            acc.id = 1;
-            acc.balance = 15;
-            Console.WriteLine($"Account {acc.id}, balance {acc.balance}");
-            acc.Deposit(10);
-            Console.WriteLine($"Account {acc.id}, balance {acc.balance}");
-            acc.WithDraw(15);
-            Console.WriteLine($"Account {acc.id}, balance {acc.balance}");
+			acc.id = 1;
+			acc.balance = 15;
+			Console.WriteLine($"Account {acc.id}, balance {acc.balance}");
+			acc.Deposit(10);
+			Console.WriteLine($"Account {acc.id}, balance {acc.balance}");
+			acc.WithDraw(15);
+			Console.WriteLine($"Account {acc.id}, balance {acc.balance}");
 		}
 	}
 }
