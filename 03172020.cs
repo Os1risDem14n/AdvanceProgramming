@@ -1,9 +1,5 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace BankAccount
 {
     public class BankAccount
@@ -45,7 +41,7 @@ namespace BankAccount
         }
         public override string ToString()
         {
-            return $"Account ID{this.id}, balance {this.balance:F2}";
+            return $"Account ID{this.id}, balance {this.balance}";
         }
         public static void Main()
         {
@@ -127,5 +123,21 @@ namespace BankAccount
             accounts[id] = new BankAccount(id);
         }
     }
-}
+    public class Person
+    {
+        private string name;
+        private int age;
+        private List<BankAccount> accounts;
 
+        public Person(string name, int age) : this(name, age, new List<BankAccount>())
+        {
+        }
+
+        public Person(string name, int age, List<BankAccount> accounts)
+        {
+            this.name = name;
+            this.age = age;
+            this.accounts = accounts;
+        }
+    }
+}
